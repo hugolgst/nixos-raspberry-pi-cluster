@@ -1,5 +1,5 @@
 # nixos-raspberry-pi-cluster
-A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS managed by NixOps
+A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS and managed by NixOps
 
 ## Installation
 ### Booting the Raspberry Pis
