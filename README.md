@@ -33,3 +33,5 @@ First of all, if your main computer is *not* ARM-based, you have to emulate ARM 
   ```bash
   dd bs=4M if=nixos-sd-image-21.03pre262561.581232454fd-aarch64-linux.img of=/dev/mmcblk0 conv=fsync
   ```
+  
+You might find useful information on [this wiki post](https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_3).
