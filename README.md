@@ -3,7 +3,7 @@ A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS managed by Ni
 
 ## Installation
 ### Booting the Raspberry Pis
-#### 4 (2Go, 4Go)
+#### 4
 
 #### 3B+
 In order to boot NixOS on a Raspberry Pi 3B+ you'll have to build your own image.
@@ -35,3 +35,8 @@ First of all, if your main computer is *not* ARM-based, you have to emulate ARM 
   ```
   
 You might find useful information on [this wiki post](https://nixos.wiki/wiki/NixOS_on_ARM/Raspberry_Pi_3).
+
+### First viable configuration
+#### 4
+
+#### 3B+
