@@ -17,7 +17,7 @@ First of all, if your main computer is *not* ARM-based, you have to emulate ARM 
 
 
 2. You can now build the image via this command (which might take a while depending on your computer)
-  ```nix
+  ```bash
   nix-build '<nixpkgs/nixos>' -A config.system.build.sdImage --argstr system aarch64-linux -I nixos-config=sd-image.nix
   ```
 
@@ -28,6 +28,6 @@ First of all, if your main computer is *not* ARM-based, you have to emulate ARM 
 
 4. You can now flash the image to your SD card!
   Example with `dd`:
-  ```
+  ```bash
   dd bs=4M if=nixos-sd-image-21.03pre262561.581232454fd-aarch64-linux.img of=/dev/mmcblk0 conv=fsync
   ```
