@@ -40,3 +40,13 @@ You might find useful information on [this wiki post](https://nixos.wiki/wiki/Ni
 #### 4
 
 #### 3B+
+After successfully booting your RPI3B+, you have to pull the default configuration file in `/etc/nixos/configuration.nix`
+```bash
+curl https://raw.githubusercontent.com/hugolgst/nixos-raspberry-pi-cluster/master/rpi3B%2B/default-configuration.nix > /etc/nixos/configuration.nix
+```
+
+Then tweak the configuration file as you want and rebuild/reboot the system
+```bash
+nixos-rebuild switch
+reboot
+```
