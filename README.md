@@ -41,6 +41,12 @@ You might find useful information on [this wiki post](https://nixos.wiki/wiki/Ni
 
 ### First viable configuration
 #### 4
+After booting on the RPI4, generate the hardware configuration via:
+```
+nixos-generate-configuration
+```
+
+Then, you can pull the default configuration
 
 #### 3B+
 After successfully booting your RPI3B+, you have to pull the default configuration file in `/etc/nixos/configuration.nix`
