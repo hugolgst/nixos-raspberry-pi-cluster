@@ -7,6 +7,8 @@ A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS managed by Ni
 
 #### 3B+
 In order to boot NixOS on a Raspberry Pi 3B+ you'll have to build your own image.
+Find its Nix expression at [`rpi3B+/sd-image.nix`](https://github.com/hugolgst/nixos-raspberry-pi-cluster/blob/master/rpi3B%2B/sd-image.nix)
+
 
 First of all, if your main computer is *not* ARM-based, you have to emulate ARM on your system.
 1. Add the following parameter to your NixOS configuration:
