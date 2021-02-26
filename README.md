@@ -42,11 +42,14 @@ You might find useful information on [this wiki post](https://nixos.wiki/wiki/Ni
 ### First viable configuration
 #### 4
 After booting on the RPI4, generate the hardware configuration via:
-```
+```bash
 nixos-generate-configuration
 ```
 
 Then, you can pull the default configuration
+```bash
+curl https://raw.githubusercontent.com/hugolgst/nixos-raspberry-pi-cluster/master/rpi4/default-configuration.nix > /etc/nixos/configuration.nix
+```
 
 #### 3B+
 After successfully booting your RPI3B+, you have to pull the default configuration file in `/etc/nixos/configuration.nix`
@@ -54,6 +57,7 @@ After successfully booting your RPI3B+, you have to pull the default configurati
 curl https://raw.githubusercontent.com/hugolgst/nixos-raspberry-pi-cluster/master/rpi3B%2B/default-configuration.nix > /etc/nixos/configuration.nix
 ```
 
+#### Rebuild
 Then tweak the configuration file as you want and rebuild/reboot the system
 ```bash
 nixos-rebuild switch
