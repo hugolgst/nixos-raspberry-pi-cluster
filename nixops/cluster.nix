@@ -2,6 +2,8 @@ let
   pkgs = import <nixpkgs> { };
   vpnConfiguration = import ./vpn-configuration.nix;
 in {
+  network.description = "A Raspberry Pi (4, 3B+) cluster.";
+
   # Default configuration applicable to all machines
   defaults = {
     # Setup Gnome display manager
