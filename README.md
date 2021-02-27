@@ -10,7 +10,13 @@ A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS and managed b
     </ol>
   </li>
   
-  <li><a href="#nixops-deployment"><strong>NixOps deployment</strong></a></li>
+  <li><a href="#nixops-deployment"><strong>NixOps deployment</strong></a>
+    <ol>
+      <li><a href="#install-nixops">Install NixOps</a></li>
+      <li><a href="#create-the-deployment">Create the deployment</a></li>
+      <li><a href="#deploy-the-configurations">Deploy the configurations</a></li>
+    </ol>
+  </li>
 </ol>
 
 ## Installation
@@ -79,7 +85,7 @@ reboot
 ## NixOps deployment
 To manage the Raspberry Pi cluster, we can use [NixOps](https://github.com/NixOS/nixops).
 
-### Installation
+### Install NixOps
 First of all make sure to have it installed on your system:
 ```bash
 nix-env -iA nixos.nixops
