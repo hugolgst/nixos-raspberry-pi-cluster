@@ -1,6 +1,4 @@
-{ vpnClientConfiguration, vpnServerConfiguration }:
-
-{ ... }: {
+{ vpnClientConfiguration, vpnServerConfiguration }: {
   networking.firewall.allowedUDPPorts = [ vpnServerConfiguration.port ];
 
   # Enable Wireguard
@@ -11,7 +9,9 @@
     peers = [{
       publicKey = vpnServerConfiguration.publicKey;
       allowedIPs = vpnServerConfiguration.allowedIPs;
-      endpoint = "${vpnServerConfiguration.ip}:${vpnServerConfiguration.port}";
+      endpoint = "${vpnServerConfiguration.ip}:${
+          builtins.toString vpnServerConfiguration.port
+        }";
       persistentKeepalive = 25;
     }];
   };
