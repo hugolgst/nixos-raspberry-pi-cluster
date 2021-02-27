@@ -40,12 +40,12 @@ You might find useful information on [this wiki post](https://nixos.wiki/wiki/Ni
   ```
 
 ### First viable configuration
-#### 4
-After booting on the RPI4, generate the hardware configuration via:
+After booting on the Raspberry Pi, generate the configuration via:
 ```bash
 nixos-generate-configuration
 ```
 
+#### 4
 Then, you can pull the default configuration
 ```bash
 curl https://raw.githubusercontent.com/hugolgst/nixos-raspberry-pi-cluster/master/rpi4/default-configuration.nix > /etc/nixos/configuration.nix
