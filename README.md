@@ -103,7 +103,7 @@ nixops list
 *To have more information about the commands available and the tool in general, check [the manual](https://hydra.nixos.org/build/115931128/download/1/manual/manual.html).*
 
 ### Deploy the configurations
-Tweak the configuration(s) in [`nixops/cluster.nix`]()
+You can tweak the configuration(s) in [`nixops/cluster.nix`](https://github.com/hugolgst/nixos-raspberry-pi-cluster/blob/master/nixops/cluster.nix) and the `nixops/` files as you want.
 
 In order to deploy the configuration you can use the `deploy` tag.
 ```bash
