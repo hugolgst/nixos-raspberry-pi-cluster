@@ -3,11 +3,14 @@ A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS and managed b
 
 ## Summary
 <ol>
-  <li><a href="#installation"><strong>Installation</strong></a></li>
-  <ol>
-    <li><a href="#booting-the-raspberry-pis">Booting the Raspberry Pis</a></li>
-    <li><a href="#first-viable-configuration">First viable configuration</a></li>
-  </ol>
+  <li><a href="#installation"><strong>Installation</strong></a>
+    <ol>
+      <li><a href="#booting-the-raspberry-pis">Booting the Raspberry Pis</a></li>
+      <li><a href="#first-viable-configuration">First viable configuration</a></li>
+    </ol>
+  </li>
+  
+  <li><a href="#nixops-deployment"><strong>NixOps deployment</strong></a></li>
 </ol>
 
 ## Installation
@@ -71,4 +74,38 @@ Then tweak the configuration file as you want and rebuild/reboot the system
 ```bash
 nixos-rebuild switch
 reboot
+```
+
+## NixOps deployment
+To manage the Raspberry Pi cluster, we can use [NixOps](https://github.com/NixOS/nixops).
+
+### Installation
+First of all make sure to have it installed on your system:
+```bash
+nix-env -iA nixos.nixops
+```
+or 
+```bash
+nix-shell -p nixops
+```
+or add it to your system packages in `/etc/nixos/configuration.nix`.
+
+### Create the deployment
+Create the deployment using this command
+```bash
+nixops create nixops/cluster.nix -d <your-deployment-name>
+```
+
+Then you can list all your deployments and check if yours is present with:
+```bash
+nixops list
+```
+*To have more information about the commands available and the tool in general, check [the manual](https://hydra.nixos.org/build/115931128/download/1/manual/manual.html).*
+
+### Deploy the configurations
+Tweak the configuration(s) in [`nixops/cluster.nix`]()
+
+In order to deploy the configuration you can use the `deploy` tag.
+```bash
+nixops deploy -d <your-deployment-name>
 ```
