@@ -1,5 +1,8 @@
+<img src="https://user-images.githubusercontent.com/15371828/109402799-1cf80a80-7959-11eb-8ba3-5b9b83c03dfd.jpg" align="right" width="225" />
+
 # nixos-raspberry-pi-cluster
-A user-guide to create a Raspberry Pi (3B+, 4) cluster under NixOS and managed by NixOps
+A user-guide to create a Raspberry Pi (3B+, 4) cluster under **NixOS** and managed by **NixOps**.
+In this guide, the nodes are all connected to a VPN server using Wireguard.
 
 ## Table of contents
 <ol>
@@ -57,6 +60,14 @@ You might find useful information on [this wiki post](https://nixos.wiki/wiki/Ni
   dd bs=4M if=nixos-sd-image-21.03pre262561.581232454fd-aarch64-linux.img of=/dev/mmcblk0 conv=fsync
   ```
 
+#### Booting
+Then, plug a keyboard and a screen via the HDMI/micro-HDMI ports.
+
+To connect it to internet, either plug a Ethernet cable or connect to the wifi with:
+```bash
+wpa_supplicant -B -i wlan0 -c <(wpa_passphrase 'SSID' 'password')
+```
+
 ### First viable configuration
 After booting on the Raspberry Pi, generate the configuration via:
 ```bash
@@ -107,6 +118,13 @@ Then you can list all your deployments and check if yours is present with:
 nixops list
 ```
 *To have more information about the commands available and the tool in general, check [the manual](https://hydra.nixos.org/build/115931128/download/1/manual/manual.html).*
+
+**Make sure to have your ssh public key in the root authorized keys!**
+```nix
+users.extraUsers.root.openssh.authorizedKeys.keys = [
+  "ssh-rsa ... host"
+];
+```
 
 ### Deploy the configurations
 You can tweak the configuration(s) in [`nixops/cluster.nix`](https://github.com/hugolgst/nixos-raspberry-pi-cluster/blob/master/nixops/cluster.nix) and the `nixops/` files as you want.
