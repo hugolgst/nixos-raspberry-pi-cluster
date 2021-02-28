@@ -2,6 +2,7 @@
 
 # nixos-raspberry-pi-cluster
 A user-guide to create a Raspberry Pi (3B+, 4) cluster under **NixOS** and managed by **NixOps**.
+In this guide, the nodes are all connected to a VPN server using Wireguard.
 
 ## Table of contents
 <ol>
