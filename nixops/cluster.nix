@@ -8,7 +8,7 @@ let
     ({ ... }:
       let
         vpnClientConfiguration = vpnConfiguration.clients."${name}";
-        wireguard = import ./wireguard.nix {
+        wireguard = import ./wireguard-client.nix {
           inherit vpnClientConfiguration;
           vpnServerConfiguration = vpnConfiguration.server;
         };
@@ -22,7 +22,13 @@ in {
   # Define the machines in the network
   a = machine "4" "a";
   b = machine "4" "b";
-  # c = machine "3B+" "c";
+  #c = machine "3B+" "c";
+
+  # The Wireguard server
+  neutronvpn = { pkgs, ... }: {
+    imports = [ ./wireguard-server.nix ];
+    deployment.targetHost = vpnConfiguration.server.ip;
+  };
 
   # Default configuration applicable to all machines
   defaults = {
