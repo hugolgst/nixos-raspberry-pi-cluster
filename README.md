@@ -110,6 +110,13 @@ nixops list
 ```
 *To have more information about the commands available and the tool in general, check [the manual](https://hydra.nixos.org/build/115931128/download/1/manual/manual.html).*
 
+**Make sure to have your ssh public key in the root authorized keys!**
+```nix
+users.extraUsers.root.openssh.authorizedKeys.keys = [
+  "ssh-rsa ... host"
+];
+```
+
 ### Deploy the configurations
 You can tweak the configuration(s) in [`nixops/cluster.nix`](https://github.com/hugolgst/nixos-raspberry-pi-cluster/blob/master/nixops/cluster.nix) and the `nixops/` files as you want.
 
