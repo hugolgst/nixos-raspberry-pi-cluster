@@ -21,7 +21,7 @@ in {
 
   # Define the machines in the network
   a = machine "4" "a";
-  # b = machine "4" "b";
+  b = machine "4" "b";
   # c = machine "3B+" "c";
 
   # Default configuration applicable to all machines
