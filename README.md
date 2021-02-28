@@ -60,6 +60,14 @@ You might find useful information on [this wiki post](https://nixos.wiki/wiki/Ni
   dd bs=4M if=nixos-sd-image-21.03pre262561.581232454fd-aarch64-linux.img of=/dev/mmcblk0 conv=fsync
   ```
 
+#### Booting
+Then, plug a keyboard and a screen via the HDMI/micro-HDMI ports.
+
+To connect it to internet, either plug a Ethernet cable or connect to the wifi with:
+```bash
+wpa_supplicant -B -i wlan0 -c <(wpa_passphrase 'SSID' 'password')
+```
+
 ### First viable configuration
 After booting on the Raspberry Pi, generate the configuration via:
 ```bash
