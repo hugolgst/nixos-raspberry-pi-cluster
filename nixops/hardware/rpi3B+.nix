@@ -1,4 +1,9 @@
 { pkgs, ... }: {
+  # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
+  boot.loader.grub.enable = false;
+  # Enables the generation of /boot/extlinux/extlinux.conf
+  boot.loader.generic-extlinux-compatible.enable = true;
+
   # Make sure not to use the latest kernel because it is not supported on NixOS RPI
   boot.kernelPackages = pkgs.linuxPackages_rpi3;
 
