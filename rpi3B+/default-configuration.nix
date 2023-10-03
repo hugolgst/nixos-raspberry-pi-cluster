@@ -15,7 +15,7 @@
     gpu_mem=256
   '';
 
-  environment.systemPackages = with pkgs; [ raspberrypi-tools ];
+  environment.systemPackages = with pkgs; [ libraspberrypi ];
 
   # File systems configuration for using the installer's partition layout
   fileSystems = {
